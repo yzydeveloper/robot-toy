@@ -12,7 +12,7 @@
     "start:prod": "node dist/main"
   },
   "dependencies": {
-    "@robot-toy/server": "workspace:*",
+    "@robot-toy/shared": "workspace:*",
     "@nestjs/common": "8.2.3",
     "@nestjs/core": "8.2.3",
     "@nestjs/platform-express": "8.2.3",
