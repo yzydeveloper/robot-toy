@@ -1,3 +1,3 @@
-import { ServerAbstract } from './base'
+import { ApiAbstract } from './base'
 
-export class DingtalkServer extends ServerAbstract { }
+export class DingtalkApi extends ApiAbstract { }

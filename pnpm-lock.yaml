@@ -36,7 +36,7 @@ importers:
       '@nestjs/core': 8.2.3_7b67a564c8eae17fa36ea6a404c74bef
       '@nestjs/platform-express': 8.2.3_4e195730d90113ce1578bd999274c7a8
       '@nestjs/schedule': 1.0.2_9bdbff8c48260a6971831c56bdd8b21e
-      '@robot-toy/shared': link:../server
+      '@robot-toy/shared': link:../shared
       dotenv: 10.0.0
       reflect-metadata: 0.1.13
       rimraf: 3.0.2
@@ -51,7 +51,7 @@ importers:
       ts-node: 10.4.0_e604d137432c8c3bee6506318520f6ca
       tsconfig-paths: 3.11.0
 
-  packages/server:
+  packages/shared:
     specifiers:
       ohmyfetch: ^0.4.18
       tsup: ^6.2.2

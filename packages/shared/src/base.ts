@@ -1,1 +1,1 @@
-export abstract class ServerAbstract { }
+export abstract class ApiAbstract { }

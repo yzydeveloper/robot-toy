@@ -1,3 +1,3 @@
-import { ServerAbstract } from './base'
+import { ApiAbstract } from './base'
 
-export class WecomServer extends ServerAbstract { }
+export class WecomApi extends ApiAbstract { }
