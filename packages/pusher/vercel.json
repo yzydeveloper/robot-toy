@@ -2,7 +2,7 @@
     "name": "@robot-toy/pusher",
     "builds": [
         {
-            "src": "src/main.ts",
+            "src": "dist/main.js",
             "use": "@vercel/node"
         }
     ],
