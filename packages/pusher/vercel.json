@@ -15,9 +15,12 @@
     "headers": [
         {
             "source": "/(.*)",
-            "headers": {
-                "x-vercel-ip-timezone": "Asia/Shanghai"
-            }
+            "headers": [
+                {
+                    "key": "x-vercel-ip-timezone",
+                    "value": "Asia/Shanghai"
+                }
+            ]
         }
     ]
 }
