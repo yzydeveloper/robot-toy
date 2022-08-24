@@ -12,7 +12,12 @@
             "dest": "dist/main.js"
         }
     ],
-    "headers": {
-        "x-vercel-ip-timezone": "Asia/Shanghai"
-    }
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": {
+                "x-vercel-ip-timezone": "Asia/Shanghai"
+            }
+        }
+    ]
 }
