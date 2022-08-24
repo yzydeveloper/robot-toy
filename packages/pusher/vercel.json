@@ -1,13 +1,15 @@
 {
-    "headers": [
+    "name": "@robot-toy/pusher",
+    "builds": [
         {
-            "source": "/(.*)",
-            "headers": [
-                {
-                    "key": "x-vercel-ip-timezone",
-                    "value": "Asia/Shanghai"
-                }
-            ]
+            "src": "dist/main.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "dist/main.js"
         }
     ]
 }
