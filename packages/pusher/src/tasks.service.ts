@@ -16,7 +16,7 @@ export class TasksService {
     }
 
     @Timeout(5000)
-    handleTimeout() {
+    async handleTimeout() {
         this.logger.debug('Called once after 5 seconds')
     }
 }
