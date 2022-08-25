@@ -1,17 +1,21 @@
-import type { WeatherParams, WeatherModel } from '../types'
+import type { LunarModel, WeatherModel } from '../types'
 import { TianApiAbstract } from './tian.abstract'
 import { tianFetchClient } from '../http'
 
 export class Api extends TianApiAbstract {
-    getWeather(params: WeatherParams) {
-        return tianFetchClient.get<WeatherModel>('/tianqi/index', {
-            params
+    getWeather(city: string) {
+        return tianFetchClient.get<WeatherModel[]>('/tianqi/index', {
+            params: {
+                city
+            }
         })
     }
 
-    getLunar(params: any) {
-        return tianFetchClient.get('/lunar/index', {
-            params
+    getLunar(date: string) {
+        return tianFetchClient.get<LunarModel[]>('/lunar/index', {
+            params: {
+                date
+            }
         })
     }
 }

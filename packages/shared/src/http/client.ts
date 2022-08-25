@@ -50,7 +50,9 @@ function createTianFetchClient() {
         },
         parseResponse(_response) {
             const response = JSON.parse(_response)
-            return response.data ? response.data : response
+            if (response.code === 200) {
+                return response.newslist
+            }
         }
     })
 }
