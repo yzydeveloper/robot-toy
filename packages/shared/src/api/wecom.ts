@@ -1,19 +1,12 @@
-import type { WecomTokenParams, WecomTokenModel, WecomSendMessageBody } from '../types'
+import type { WecomSendMessageBody } from '../types'
 import { WecomApiAbstract } from './wecom.abstract'
 import { WECOM_BASE_URL } from '../constants'
-import { fetchClient } from '../http'
+import { wecomFetchClient } from '../http'
 
 class Api extends WecomApiAbstract {
-    getToken(params: WecomTokenParams): Promise<WecomTokenModel> {
-        return fetchClient.get<WecomTokenModel>(`${WECOM_BASE_URL}/cgi-bin/gettoken`, { params })
-    }
-
-    sendMessage(body: WecomSendMessageBody, token: string): Promise<any> {
-        return fetchClient.post(`${WECOM_BASE_URL}/cgi-bin/message/send`, {
-            body,
-            params: {
-                assess_token: token
-            }
+    sendMessage(body: WecomSendMessageBody): Promise<any> {
+        return wecomFetchClient.post(`${WECOM_BASE_URL}/cgi-bin/message/send`, {
+            body
         })
     }
 }

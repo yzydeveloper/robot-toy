@@ -1,3 +1,4 @@
+import type { WeatherModel } from '../types'
 import { RollApiAbstract } from './roll.abstract'
 import { fetchClient } from '../http'
 import { ROLL_BASE_URL, ROLL_APP_ID, ROLL_APP_SECRET } from '../constants'
@@ -8,17 +9,17 @@ const defaultParams = {
 }
 
 class Api extends RollApiAbstract {
-    getWeather(city: string): Promise<void> {
-        return fetchClient.get(`${ROLL_BASE_URL}/weather/current/${city}`, {
+    getWeather(city: string) {
+        return fetchClient.get<WeatherModel>(`${ROLL_BASE_URL}/weather/current/${city}`, {
             params: defaultParams
         })
     }
 
     getHoliday(params: {
         date: string
-        ignoreHoliday: boolean
+        ignoreHoliday?: boolean
     }): Promise<void> {
-        return fetchClient.get(`${ROLL_BASE_URL}/api/holiday/single/${params.date}`, {
+        return fetchClient.get(`${ROLL_BASE_URL}/holiday/single/${params.date}`, {
             params: {
                 ...defaultParams,
                 ignoreHoliday: params.ignoreHoliday
