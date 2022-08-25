@@ -1,9 +1,9 @@
 import type { DingtalkTokenParams, DingtalkTokenModel, DingtalkBatchSendOtomsgBody, DingtalkBatchSendOtomsgModel } from '../types'
-import type { DingtalkApiAbstract } from './dingtalk.abstract'
+import { DingtalkApiAbstract } from './dingtalk.abstract'
 import { DINGTALK_BASE_URL } from '../constants'
 import { fetchClient } from '../http'
 
-class Api implements DingtalkApiAbstract {
+class Api extends DingtalkApiAbstract {
     getToken(params: DingtalkTokenParams) {
         return fetchClient.get<DingtalkTokenModel>(`${DINGTALK_BASE_URL}/gettoken`, { params })
     }
