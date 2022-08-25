@@ -10,10 +10,16 @@ export interface DingtalkTokenModel {
     expires_in: number
 }
 
+export enum DingtalkMsgTypeEnum {
+    sampleText = 'sampleText',
+    sampleMarkdown = 'sampleMarkdown'
+}
+export type DingtalkMsgType = keyof typeof DingtalkMsgTypeEnum
+
 export interface DingtalkBatchSendOtomsgBody {
     robotCode: string
     userIds: string[]
-    msgKey: string
+    msgKey: DingtalkMsgType
     msgParam: string
 }
 
