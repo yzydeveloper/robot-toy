@@ -16,6 +16,7 @@ importers:
     specifiers:
       '@nestjs/cli': 8.1.5
       '@nestjs/common': 8.2.3
+      '@nestjs/config': ^2.2.0
       '@nestjs/core': 8.2.3
       '@nestjs/platform-express': 8.2.3
       '@nestjs/schedule': 1.0.2
@@ -26,7 +27,6 @@ importers:
       '@types/express': 4.17.13
       '@types/node': 16.11.17
       '@vercel/node': ^2.5.9
-      dayjs: ^1.11.5
       dotenv: 10.0.0
       reflect-metadata: 0.1.13
       rimraf: 3.0.2
@@ -35,12 +35,12 @@ importers:
       tsconfig-paths: 3.11.0
     dependencies:
       '@nestjs/common': 8.2.3_reflect-metadata@0.1.13
+      '@nestjs/config': 2.2.0_051e4ec914be5e31382127959d591c92
       '@nestjs/core': 8.2.3_7b67a564c8eae17fa36ea6a404c74bef
       '@nestjs/platform-express': 8.2.3_4e195730d90113ce1578bd999274c7a8
       '@nestjs/schedule': 1.0.2_9bdbff8c48260a6971831c56bdd8b21e
       '@robot-toy/shared': link:../shared
       '@vercel/node': 2.5.9
-      dayjs: 1.11.5
       dotenv: 10.0.0
       reflect-metadata: 0.1.13
       rimraf: 3.0.2
@@ -361,6 +361,21 @@ packages:
       uuid: 8.3.2
     transitivePeerDependencies:
       - debug
+    dev: false
+
+  /@nestjs/config/2.2.0_051e4ec914be5e31382127959d591c92:
+    resolution: {integrity: sha512-78Eg6oMbCy3D/YvqeiGBTOWei1Jwi3f2pSIZcZ1QxY67kYsJzTRTkwRT8Iv30DbK0sGKc1mcloDLD5UXgZAZtg==}
+    peerDependencies:
+      '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0
+      reflect-metadata: ^0.1.13
+      rxjs: ^6.0.0 || ^7.2.0
+    dependencies:
+      '@nestjs/common': 8.2.3_reflect-metadata@0.1.13
+      dotenv: 16.0.1
+      dotenv-expand: 8.0.3
+      lodash: 4.17.21
+      reflect-metadata: 0.1.13
+      uuid: 8.3.2
     dev: false
 
   /@nestjs/core/8.2.3_7b67a564c8eae17fa36ea6a404c74bef:
@@ -1477,10 +1492,6 @@ packages:
     hasBin: true
     dev: true
 
-  /dayjs/1.11.5:
-    resolution: {integrity: sha512-CAdX5Q3YW3Gclyo5Vpqkgpj8fSdLQcRuzfX6mC6Phy0nfJ0eGYOeS7m4mt2plDWLAtA4TqTakvbboHvUxfe4iA==}
-    dev: false
-
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
     dependencies:
@@ -1600,9 +1611,19 @@ packages:
       domhandler: 4.3.1
     dev: true
 
+  /dotenv-expand/8.0.3:
+    resolution: {integrity: sha512-SErOMvge0ZUyWd5B0NXMQlDkN+8r+HhVUsxgOO7IoPDOdDRD2JjExpN6y3KnFR66jsJMwSn1pqIivhU5rcJiNg==}
+    engines: {node: '>=12'}
+    dev: false
+
   /dotenv/10.0.0:
     resolution: {integrity: sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==}
     engines: {node: '>=10'}
+
+  /dotenv/16.0.1:
+    resolution: {integrity: sha512-1K6hR6wtk2FviQ4kEiSjFiH5rpzEVi8WW0x96aztHVMhEspNpc4DVOUTEHtEva5VThQ8IaBX1Pe4gSzpVVUsKQ==}
+    engines: {node: '>=12'}
+    dev: false
 
   /edge-runtime/1.1.0-beta.23:
     resolution: {integrity: sha512-A7dO/Y+4UJnaxFcdz6pepL+0GcvvViWvf201oFQXepgdSxPDKiqxaayCag0eiirQ6OfF+cSTmPD3xrfEoAIjiQ==}
@@ -3276,7 +3297,6 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-symbols/4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==}

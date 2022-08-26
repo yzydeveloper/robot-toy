@@ -1,5 +1,7 @@
-import { DINGTALK_BASE_URL, WECOM_BASE_URL, WECOM_APP_ID, WECOM_APP_SECRET, DINGTALK_APP_ID, DINGTALK_APP_SECRET, TIAN_BASE_URL, TIAN_APP_SECRET } from '../constants'
+import { DINGTALK_BASE_URL, WECOM_BASE_URL, TIAN_BASE_URL } from '../constants'
 import { Fetch, fetchClient } from './fetch'
+
+const { WECOM_APP_ID, WECOM_APP_SECRET, DINGTALK_ROBOT_APP_ID, DINGTALK_ROBOT_APP_SECRET, TIAN_APP_SECRET } = process.env
 
 function createWecomFetchClient() {
     return new Fetch({
@@ -25,8 +27,8 @@ function createDingtalkFetchClient() {
         async onRequest({ options }) {
             const tokenData = await fetchClient.get(`${DINGTALK_BASE_URL}/gettoken`, {
                 params: {
-                    appkey: DINGTALK_APP_ID,
-                    appsecret: DINGTALK_APP_SECRET
+                    appkey: DINGTALK_ROBOT_APP_ID,
+                    appsecret: DINGTALK_ROBOT_APP_SECRET
                 }
             })
             !options.headers && (options.headers = {})
