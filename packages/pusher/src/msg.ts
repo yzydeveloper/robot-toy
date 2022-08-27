@@ -1,5 +1,4 @@
 import type { WecomSendMessageBody, DingtalkBatchSendOtomsgBody } from '@robot-toy/shared'
-
 import { TianApi } from '@robot-toy/shared'
 
 type TextCardMsgModel = Pick<WecomSendMessageBody, 'textcard' | 'msgtype'>
