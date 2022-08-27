@@ -7,7 +7,7 @@ declare global {
         export interface ProcessEnv {
             DINGTALK_ROBOT_APP_ID: string
             DINGTALK_ROBOT_APP_SECRET: string
-            DINGTALK_USERIDS: string[] | undefined
+            // DINGTALK_USERIDS: string[]
             WECOM_ID: string
             WECOM_APP_ID: string
             WECOM_APP_SECRET: string
