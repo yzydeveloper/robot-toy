@@ -5,7 +5,7 @@ type TextCardMsgModel = Pick<WecomSendMessageBody, 'textcard' | 'msgtype'>
 
 interface TextCardMsgParams {
     city: string
-    knowTime: string
+    timeOfKnowing: string
 }
 
 type MarkdownMsgModel = Pick<DingtalkBatchSendOtomsgBody, 'msgKey' | 'msgParam'>
@@ -15,7 +15,7 @@ interface MarkdownMsgParams extends TextCardMsgParams { }
 export async function getTextCardMsg(params: TextCardMsgParams): Promise<TextCardMsgModel> {
     const [{ weather, area, date, wind, windsc, lowest, highest, humidity, tips }] = await TianApi.getWeather(params.city)
     const [{ lubarmonth, lunarday }] = await TianApi.getLunar(date)
-    const diffTimestamp = new Date(date).valueOf() - new Date(params.knowTime).valueOf()
+    const diffTimestamp = new Date(date).valueOf() - new Date(params.timeOfKnowing).valueOf()
     const day = Math.floor(diffTimestamp / (1000 * 3600 * 24))
 
     const title = `这是我们相识的第${day}天`
@@ -48,7 +48,7 @@ export async function getTextCardMsg(params: TextCardMsgParams): Promise<TextCar
 export async function getMarkdownMsg(params: MarkdownMsgParams): Promise<MarkdownMsgModel> {
     const [{ weather, area, date, wind, windsc, lowest, highest, humidity, tips }] = await TianApi.getWeather(params.city)
     const [{ lubarmonth, lunarday }] = await TianApi.getLunar(date)
-    const diffTimestamp = new Date(date).valueOf() - new Date(params.knowTime).valueOf()
+    const diffTimestamp = new Date(date).valueOf() - new Date(params.timeOfKnowing).valueOf()
     const day = Math.floor(diffTimestamp / (1000 * 3600 * 24))
 
     const title = `# 这是我们相识的第${day}天`

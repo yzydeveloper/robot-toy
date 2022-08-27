@@ -6,7 +6,7 @@ function createWecomFetchClient() {
         async onRequest({ options }) {
             const tokenData = await fetchClient.get(`${WECOM_BASE_URL}/cgi-bin/gettoken`, {
                 params: {
-                    corpid: process.env.WECOM_APP_ID,
+                    corpid: process.env.WECOM_ID,
                     corpsecret: process.env.WECOM_APP_SECRET
                 }
             })

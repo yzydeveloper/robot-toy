@@ -25,7 +25,8 @@ export type WecomSendMessageBody = {
     toparty?: string
     totag?: string
     msgtype: WecomMsgType
-    agentid: number; safe?: number
+    agentid: number | string;
+    safe?: number
     enable_id_trans?: number
     enable_duplicate_check?: number
 }
