@@ -18,7 +18,6 @@
     "@nestjs/platform-express": "8.2.3",
     "@nestjs/schedule": "1.0.2",
     "@robot-toy/shared": "workspace:*",
-    "@vercel/node": "^2.5.9",
     "dotenv": "10.0.0",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2"
